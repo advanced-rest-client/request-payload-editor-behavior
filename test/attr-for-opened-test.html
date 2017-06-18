@@ -1,0 +1,121 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../iron-test-helpers/test-helpers.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
+
+    <!-- Implementation of the behavior -->
+    <link rel="import" href="payload-editor.html">
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+        <payload-editor attr-for-opened="opened"></payload-editor>
+      </template>
+    </test-fixture>
+
+    <script>
+    /* global fixture, assert */
+    suite('attr-for-opened', function() {
+      suite('basic', function() {
+        var element;
+        setup(function() {
+          element = fixture('basic');
+        });
+
+        test('_propertyForOpened equals property value', function() {
+          assert.equal(element._propertyForOpened, 'opened');
+        });
+
+        test('setting opened attribute changes _propertyForOpened', function() {
+          element.setAttribute('opened', true);
+          assert.isTrue(element._openedValue);
+        });
+
+        test('_isOpened is undefined', function() {
+          assert.isUndefined(element._isOpened);
+        });
+      });
+
+      suite('not opened', function() {
+        var element;
+        setup(function() {
+          element = fixture('basic');
+        });
+
+        test('Will not encode parameters', function() {
+          const value = 'x test=x value';
+          element.value = value;
+          element.encodeValue();
+          assert.equal(element.value, value);
+        });
+
+        test('Will not decode parameters', function() {
+          const value = 'x+test=x+value';
+          element.value = value;
+          element.decodeValue();
+          assert.equal(element.value, value);
+        });
+
+        test('Removing attr-for-opened sets _isOpened to true', function() {
+          element.attrForOpened = undefined;
+          assert.isTrue(element._isOpened);
+        });
+
+        test('Re-setting attr-for-opened sets _isOpened to false', function(done) {
+          element.attrForOpened = undefined; // _isOpened is now true
+          setTimeout(function() {
+            element.attrForOpened = 'some';
+            assert.isFalse(element._isOpened);
+            done();
+          }, 1);
+        });
+      });
+
+      suite('is opened', function() {
+        var element;
+
+        setup(function() {
+          element = fixture('basic');
+          element.setAttribute('opened', true);
+        });
+
+        test('Encodes parameters', function() {
+          const value = 'x test=x value';
+          element.value = value;
+          element.encodeValue();
+          assert.notEqual(element.value, value);
+        });
+
+        test('Decodes parameters', function() {
+          const value = 'x+test=x+value';
+          element.value = value;
+          element.decodeValue();
+          assert.notEqual(element.value, value);
+        });
+
+        test('Removing attr-for-opened sets _isOpened to true', function() {
+          element.attrForOpened = undefined;
+          assert.isTrue(element._isOpened);
+        });
+      });
+    });
+    </script>
+
+  </body>
+</html>
