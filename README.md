@@ -1,3 +1,2 @@
-# `<request-payload-editor-behavior>`
+[![Build Status](https://travis-ci.org/advanced-rest-client/request-payload-editor-behavior.svg?branch=stage)](https://travis-ci.org/advanced-rest-client/request-payload-editor-behavior)  
 
-A behavior to implment a request payload editor
