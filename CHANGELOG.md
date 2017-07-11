@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/advanced-rest-client/request-payload-editor-behavior/compare/0.1.1...v0.1.2) (2017-07-11)
+
+
+### Fix
+
+* The  `_isOpened` property is not set on init time when the opened attribute is not set. ([d46cd43ee3798a2516fc1944d3f6dd2f4cad40ed](https://github.com/advanced-rest-client/request-payload-editor-behavior/commit/d46cd43ee3798a2516fc1944d3f6dd2f4cad40ed))
+
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2017-06-18)
 

@@ -42,13 +42,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           assert.equal(element._propertyForOpened, 'opened');
         });
 
-        test('setting opened attribute changes _propertyForOpened', function() {
+        test('computes _openedValue when opened attribute is set', function() {
           element.setAttribute('opened', true);
           assert.isTrue(element._openedValue);
         });
 
-        test('_isOpened is undefined', function() {
-          assert.isUndefined(element._isOpened);
+        test('computes _openedValue when opened attribute is not set', function() {
+          assert.isFalse(element._openedValue);
+        });
+
+        test('_isOpened is set when attribute is not set', function() {
+          assert.isFalse(element._isOpened);
+        });
+
+        test('_isOpened is set when attribute is set', function() {
+          element.setAttribute('opened', true);
+          assert.isTrue(element._isOpened);
         });
       });
 
