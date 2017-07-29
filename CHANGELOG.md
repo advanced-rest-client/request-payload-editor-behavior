@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/advanced-rest-client/request-payload-editor-behavior/compare/0.1.3...0.1.4) (2017-07-29)
+
+
+### Update
+
+* Updated version of a dependency.  ([6e29fe6c3461164510767287002c6461225fac0c](https://github.com/advanced-rest-client/request-payload-editor-behavior/commit/6e29fe6c3461164510767287002c6461225fac0c))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/advanced-rest-client/request-payload-editor-behavior/compare/0.1.2...v0.1.3) (2017-07-11)
 
