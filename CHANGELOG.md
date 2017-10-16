@@ -1,3 +1,13 @@
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/advanced-rest-client/request-payload-editor-behavior/compare/0.1.4...0.1.6) (2017-10-16)
+
+
+### Fix
+
+* Fixes https://github.com/jarrodek/ChromeRestClient/issues/1077 ([3568961fb8f368aecf0895a12f623c6c58a49859](https://github.com/advanced-rest-client/request-payload-editor-behavior/commit/3568961fb8f368aecf0895a12f623c6c58a49859))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/advanced-rest-client/request-payload-editor-behavior/compare/0.1.4...0.1.5) (2017-07-29)
 
