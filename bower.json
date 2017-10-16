@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "payload-parser-behavior": "advanced-rest-client/payload-parser-behavior#0.x"
+    "payload-parser-behavior": "advanced-rest-client/payload-parser-behavior#0.x",
+    "openable-panel-behavior": "advanced-rest-client/openable-panel-behavior#^0.1.2"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#1.x",

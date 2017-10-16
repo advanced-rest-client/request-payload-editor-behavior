@@ -14,6 +14,7 @@ the License.
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../payload-parser-behavior/payload-parser-behavior.html">
+<link rel="import" href="../openable-panel-behavior/openable-panel-behavior.html">
 <script>
 (function(global) {
   'use strict';
@@ -147,6 +148,7 @@ the License.
 
   global.ArcBehaviors.RequestPayloadEditorBehavior = [
     global.ArcBehaviors.PayloadParserBehavior,
+    global.ArcBehaviors.OpenablePanelBehavior,
     RequestPayloadEditorBehaviorImpl
   ];
 })(window);
